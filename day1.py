@@ -1,7 +1,11 @@
 #encoding: utf-8
-import sys
+import os
 
-def main(input_file):
+def main():
+
+    script_name = os.path.basename(__file__)
+    input_file = './{0}-input.txt'.format(os.path.splitext(script_name)[0])
+
     with open(input_file, 'r') as f:
         l = f.readline()
         f = 0
@@ -16,5 +20,4 @@ def main(input_file):
 
 
 if __name__ == '__main__':
-    script, input_file = sys.argv
-    main(input_file)
+    main()
